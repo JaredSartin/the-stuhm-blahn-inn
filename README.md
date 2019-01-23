@@ -1,12 +1,3 @@
-# Goog-Grow-Scaffold (Browserify Version)
-
-## What do I need this for?
-This is a boilerplate based on the Scaffold Grow theme (https://github.com/growthemes/scaffold) but with some
-modifications to make initial project setup easier.
-
-## What's special about this version?
-It uses browserify! This version lets you have live reloads and is a faster recompile of source files.
-
 ## Getting started
 Start off by installing all external components:
 
