@@ -1,0 +1,11 @@
+{% extends '/views/base.html' %}
+{% block main %}
+<h1>{{_(doc.hero.title)}}</h1>
+<p>{{_(doc.hero.subtitle)}}</p>
+
+<ul>
+  {% for cta in doc.ctas %}
+  <li><b>{{_(cta.title)}}:</b> {{_(cta.subtitle)}}
+  {% endfor %}
+</ul>
+{% endblock %}

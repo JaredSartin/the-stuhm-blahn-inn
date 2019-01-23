@@ -1,0 +1,18 @@
+grow_version: ">=0.3.6"
+
+localization:
+  default_locale: en_US
+  locales:
+  - de_DE
+  - en_US
+
+static_dirs:
+- static_dir: /source/images/
+  serve_at: /static/images/
+- static_dir: /dist/
+  serve_at: /static/
+
+preprocessors:
+- kind: gulp
+  build_task: "build"
+  run_task: "serve"

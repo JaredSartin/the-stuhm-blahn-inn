@@ -1,0 +1,18 @@
+$title@: Scaffold
+$path: /
+$view: /views/home.html
+$localization:
+  path: /intl/{locale}/
+  default_locale: en_US
+id: home
+meta@: This is where metadata belongs.
+hero:
+  title@: Hello World!
+  subtitle@: Lorem ipsum dolor sit amet.
+ctas:
+- title@: Callout 1
+  subtitle@: Description 1.
+- title@: Callout 2
+  subtitle@: Description 2.
+- title@: Callout 3
+  subtitle@: Description 3.
