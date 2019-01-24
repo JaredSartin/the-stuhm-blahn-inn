@@ -13,84 +13,18 @@ partials:
 - partial: hero
   dataSelector: Home
   classNames: hero__home hero__col--left
+  logo:
+    class: logo
+    src: !g.url /source/images/icons/logo.png
+
   # bg_video:
   #   poster: #!g.url /source/images/hero-graphic.svg
-  title@: Welcome! Bienvenue! Tervetuloa! Willkommen! Bienvenido!
-  desc@: You're moments away from a crispy new website.
+  title@: The Stuhm Bl'ahn Inn
+  desc@: Our adventure begins in spring 2019
   cta:
-    link: https://www.google.com
-    text@: No thanks, get me out of here!
+    link: https://twitch.tv/thestuhmblahninn
+    text@: Twitch.tv
     is_external: true
     ga:
       category: hero
       label: CTA
-
-- partial: banner
-  class: powered-by
-  title@: Powered by Grow, Gulp, Webkit & PostCSS.
-
-- partial: examples
-  sections:
-    - title@: Creating Partials
-      body@: >
-        Creating content is easy, everything works on <strong>partials</strong>. A partial acts as an html template component that can be reused freely throughout a site. With this setup, you can create a content-filled page by providing key-value pair YAML data to your partial templates.  <br /><br />
-        When defining a partial folder, it will need to at <strong>least</strong> contain an HTML file of the same name. However, a partial folder can also contain SCSS and SVGs relevant to that particular partial component.
-        Our file structure could look like:
-        <br /><br />
-        <textarea style='width:100%%;height: 86px;'>
-          /project-dir/partials/
-            - first/
-              - first.html
-            - second/
-              - second.html
-        </textarea> <br /><br />
-        Accessing YAML from within the partial is super easy – all defined key -> values in the YAML are accessible through the partial object. This is what our <span>first.html</span> partial file could look like:
-        <br /><br />
-        <textarea style='width:100%%;height: 86px;'>
-          <div class="{{partial.class}}">
-            <h2>{{ _(partial.title) }}</h2>
-            <p>{{ _(partial.body) }}</p>
-            <p>{{ _(partial.bottom) }}</p>
-          </div>
-        </textarea>
-    - title@: Creating Content
-      body@: >
-        The content-filled page is created by writing YAML data blocks, which are accessible by the partial html. Check out the <span>/partials</span> directory, you'll see that their names correspond to the content sections we define in <span>/content/pages/home.yaml</span>.<br /><br />
-        Partial data blocks will render in the order that they are defined, and should provide all the data that the specific partial template references. Using the partial from above, below is an example data block:<br /><br />
-        <textarea style='width:100%%;height: 170px;'>
-          - partial: first
-            class: the-classes you-want to add
-            title@: This is my title.
-            body@: Some other information.
-            bottom@: That you need to send to the actual partial.
-          - partial: second
-            class: the-classes you-want to add and more
-            title@: This is my second partials title.
-            body@: Some other text for the second partial.
-            bottom@: Everything defined here is available within each partial.
-        </textarea>
-    - title@: Javascript.
-      body@: >
-        Each page you create, that has accompanying Javascript, will need a composite file to be created.<br />
-        <strong>The name of your composite file, should match the <span>id</span> defined in each pages YAML.</strong>
-        <br />
-        Check out <span>/source/js/composite/home.js</span> for a working example.
-    - title@: SCSS.
-      body@: >
-        SCSS can be included on a per-partial basis by incuding it via the composite javascript file, or through the partials specific javascript.
-        With a filestructure such as;
-        <br /><br />
-        <textarea style='width:100%%;height: 86px;'>
-          /project-dir/partials/
-            - first/
-              - first.html
-              - first.js
-              - first.scss
-        </textarea>
-        <br /><br />
-        Within your Javascript, you can simply include the scss like so;<br /><br />
-        <textarea style='width:100%%;height: 24px;'>
-          import 'partials/first/first.scss';
-        </textarea>
-        <br /><br />
-        These inclusions get picked up during the PostCSS compile process and get output to page specific css.
