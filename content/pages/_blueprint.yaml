@@ -2,4 +2,5 @@ path: /{base}/
 view: /views/base.html
 
 localization:
+  default_locale: en_US
   path: /intl/{locale}/{base}/

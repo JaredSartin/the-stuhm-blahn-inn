@@ -1,12 +1,16 @@
-const gulp = require('gulp');
-const PATH = require('../path');
+const gulp = require("gulp")
+const livereload = require("gulp-livereload")
 
-gulp.task('setWatch', ['build'], () => {
-  global.isWatching = true;
-});
+const PATH = require("../path")
 
-gulp.task('serve', ['setWatch'], () => {
-  gulp.watch(PATH.STYLE.WATCH, ['sass']);
-  gulp.watch(PATH.ASSETS.SRC, ['assets']);
-  gulp.watch(PATH.JS.SRC, ['browserify']);
-});
+gulp.task("_setWatch", ["build"], () => {
+  global.isWatching = true
+})
+
+/**
+ * Export gulp tasks.
+ */
+gulp.task("serve", ["_setWatch"], () => {
+  livereload.listen()
+  gulp.watch(PATH.JS.SRC, ["_webpack"])
+})

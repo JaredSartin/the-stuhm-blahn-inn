@@ -1,0 +1,79 @@
+@import './_utils.scss';
+@import './_config.scss';
+@import './_components.scss';
+
+.hero {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include calc-hero-height();
+
+  h1,
+  h4 {
+    color: $white;
+  }
+
+  &__logo {
+    height: 138px;
+    width: 138px;
+
+    object-fit: contain;
+  }
+
+  &__col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  &__copy {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    position: relative;
+    width: 91.875%;
+    z-index: 10;
+
+    @include respond-down($md) {
+      width: 100%;
+
+      &__title {
+        font-size: $fs-h2-m;
+      }
+
+      &__title,
+      &__desc {
+        text-align: center;
+      }
+    }
+
+    &__title {
+      color: black;
+      margin: 20px 0;
+
+      @include respond-down($sm) {
+        margin: 16px 0;
+      }
+    }
+
+    &__desc {
+      white-space: pre-wrap;
+    }
+  }
+
+  .button {
+    height: 64px;
+    line-height: 64px;
+    margin-top: 24px;
+    padding: 0 20px;
+
+    @include cta-btn();
+  }
+}

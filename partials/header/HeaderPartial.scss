@@ -1,0 +1,336 @@
+@import './_config.scss';
+@import './_utils.scss';
+
+$href-margin: 32px;
+$logo-width: 164px;
+$hamburger-w: 30px;
+$hamburger-h: 100%;
+
+%flex-center {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+%href {
+  align-items: center;
+  color: $color-text;
+  display: flex;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  transition: color $anim-speed;
+  white-space: nowrap;
+
+  @include respond-down($md) {
+    font-size: $fs-p-m;
+  }
+}
+
+.header {
+  background-color: $white;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 300;
+
+  .header-nav {
+    background-color: $white;
+    // border: 1px solid black;
+    border-width: 0 0 1px;
+    // overflow: hidden;
+    @include box-shadow;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__logo {
+    color: $color-text;
+    font-family: $font-family-secondary;
+    font-size: $fs-h2-m;
+    margin-left: 24px;
+    margin-right: 48px;
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+
+    @include respond-down($md) {
+      font-size: $fs-h4;
+    }
+
+    .header.inverted & {
+      color: white;
+    }
+  }
+
+  &__link {
+    color: $color-text;
+    font-family: $font-family-secondary;
+    font-size: $fs-h3;
+    margin-left: 64px;
+
+    @include respond-down ($sm) {
+      font-size: $fs-p;
+    }
+  }
+
+  .is-open &__logo {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity $anim-speed easeOutCubic, transform $anim-speed easeOutCubic;
+  }
+
+  &-hamburger {
+    height: $hamburger-h;
+    left: 16px;
+    position: absolute;
+    transition: transform $anim-speed easeOutCubic;
+    width: $hamburger-w;
+
+    @include respond-up($md) {
+      display: none;
+    }
+
+    input {
+      cursor: pointer;
+      display: block;
+      height: $hamburger-h;
+      opacity: 0;
+      position: absolute;
+      width: 100px;
+      z-index: 2;
+
+      -webkit-touch-callout: none;
+      @include respond-up($md) {
+        width: 50px;
+
+        @include respond-down($sm) {
+          width: 100px;
+        }
+      }
+    }
+
+    &__bar {
+      background-color: black;
+      border-radius: 3px;
+      display: block;
+      height: 2px;
+      left: calc(#{$hamburger-w} / 2 - 9px);
+      position: relative;
+      top: calc(#{$hamburger-h} / 2 - 8px);
+      transform-origin: 1.2px center;
+      transition: transform .5s cubic-bezier(.77, .2, .05, 1),
+      background-color .5s cubic-bezier(.77, .2, .05, 1), opacity .55s ease;
+      width: 19px;
+      z-index: 1;
+
+      &:first-child {
+        transform-origin: 0 0;
+      }
+
+      &:nth-last-child(2) {
+        margin: 4px 0;
+        transform-origin: 0 100%;
+      }
+
+      .header.inverted & {
+        background: black;
+      }
+    }
+    input:checked ~ &__bar {
+      background: black;
+      opacity: 1;
+      transform: rotateZ(-45deg);
+    }
+
+    input:checked ~ &__bar:nth-child(2) {
+      transform: rotateZ(45deg);
+    }
+
+    input:checked ~ &__bar:nth-child(3) {
+      opacity: 0;
+      transform: rotateZ(0deg) scale(.2, .2);
+    }
+  }
+
+  .is-open &-hamburger {
+    cursor: pointer;
+    height: 30px;
+    left: auto;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 100;
+  }
+
+  &-nav {
+    align-items: center;
+    display: flex;
+    height: $header-height;
+    position: fixed;
+    transform: translate(0, 0);
+    transition: all $anim-speed easeOutCubic;
+    width: 100%;
+    z-index: 99;
+
+    @include respond-down($sm) {
+      height: $header-height-s;
+    }
+
+    .header.inverted & {
+      background-color: white;
+    }
+
+    .header.past-threshold & {
+      transform: translate(0, -100%);
+    }
+
+    &__cta {
+      height: 100%;
+      margin-right: 19px;
+      position: relative;
+
+      @include respond-down($md) {
+        display: none;
+      }
+
+      &__href {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        width: 98px;
+
+        @include cta-btn();
+      }
+    }
+
+    &__items {
+      display: flex;
+
+      &.desktop {
+        display: none;
+        margin-left: 64px;
+
+        @include respond-up($md) {
+          display: inherit;
+        }
+
+        li {
+          &:not(:last-child) {
+            margin-right: 24px;
+          }
+        }
+      }
+
+      &.mobile {
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0;
+        padding: 21px 0 11px;
+
+        @include respond-up($md) {
+          display: none;
+        }
+
+        li {
+          padding: 12px 16px 14px;
+        }
+      }
+    }
+  }
+
+  .is-open &-nav {
+    height: 0;
+    transition: height $anim-speed easeOutCubic;
+    z-index: 1000;
+  }
+}
+
+$side-menu-item-height: 48px;
+$side-menu-logo-height: 92px;
+
+.header-side-menu {
+  background-color: $white;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
+  z-index: 999;
+
+  @include respond-up($lg) {
+    display: none;
+  }
+
+  &.is-loaded {
+    transition: transform $anim-speed easeOutCubic;
+  }
+
+  &__logo {
+    //background: svg-load('header/tour-creator-mobile.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 36px;
+    margin-top: 10px;
+    width: 173px;
+
+    object-fit: contain;
+
+    &--container {
+      padding: 22px 16px;
+
+      .header__link {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .header-side__logo {
+    background-color: $white;
+    bottom: 0;
+    height: $side-menu-logo-height;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .header-nav__cta {
+    display: block;
+    margin: 0;
+    padding: 22px 16px;
+
+    &__href {
+      box-shadow: none;
+      height: 46px;
+      line-height: 46px;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .is-open &__logo {
+    opacity: 1;
+    transform: none;
+  }
+
+  .is-open & {
+    height: 100%;
+    transform: translateX(0%);
+    transition: transform $anim-speed easeOutCubic;
+    width: 80%;
+  }
+}
+
+@keyframes header-enter {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

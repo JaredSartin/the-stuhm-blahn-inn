@@ -1,3 +1,57 @@
 $color-fg: #333;
-$color-bg: #efefef;
-$font-family: "RobotoDraft", "Helvetica", arial, sans-serif;
+$color-bg: #ffffff;
+$font-family: "Roboto", "Helvetica", arial, sans-serif;
+$font-family-secondary: "Google Sans", "Helvetica", arial, sans-serif;
+
+/***************
+    MEDIA VARS
+***************/
+$xs: 320px;
+$sm: 600px;
+$md: 1023px;
+$lg: 1440px;
+$xl: 1800px;
+
+/***************
+    COLORS
+***************/
+$black: #000000;
+$white: #ffffff;
+$grey: rgba(153, 153, 153, 0.2);
+
+$google-grey-dark: #5f6368;
+$google-grey-light: #f1f3f4;
+$google-blue: #4285f4;
+
+$color-text: $google-grey-dark;
+
+/***************
+    FONT SIZES
+***************/
+$fs-mega: 240px;
+$fs-mega-m: 180px;
+$fs-mega-s: 118px;
+$fs-h1: 56px;
+$fs-h2: 44px;
+$fs-h2-m: 36px;
+$fs-h3: 32px;
+$fs-h3-m: 24px;
+$fs-h4: 22px;
+$fs-h4-m: 20px;
+$fs-p: 16px;
+$fs-p-m: 14px;
+$fs-desc: 12px;
+
+/***************
+    COMPONENTS
+***************/
+$header-height: 88px;
+$header-height-s: 56px;
+$header-side-menu-width: 264px;
+
+/***************
+    VARIABLES
+***************/
+$anim-speed: 0.24s;
+$anim-speed--leave: 0.42s;
+$anim-speed--slow: $anim-speed * 2;

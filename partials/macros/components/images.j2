@@ -1,0 +1,155 @@
+{% macro image(data) %}
+  {% if data.progressive %}
+    <div class="progressive-image {{data.class}}">
+      {{ placeholder(data) }}
+    </div>
+  {% else %}
+    {{ image_el(data) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro picture(data) %}
+  {% if data.progressive %}
+    <div class="progressive-picture {{data.class}}">
+      {{ placeholder(data) }}
+    </div>
+  {% else %}
+    {{ picture_el(data) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro figure(data) %}
+  <figure class="{{data.parent_class}}">
+    {% if data.sources %}
+      {{picture(data)}}
+    {% else %}
+      {{image(data)}}
+    {% endif %}
+
+    {% if data.caption %}
+      <figcaption>{{data.caption}}</figcaption>
+    {% endif %}
+  </figure>
+{% endmacro %}
+
+{% macro picture_el(data) %}
+  {% if data.progressive is not defined %}
+    {% set class = data.class %}
+  {% endif %}
+  <picture class="{{class}}">
+    {% set default = namespace(src=data.src)  %}
+    {% for source in data.sources %}
+      <source
+        srcset="{{ getSrcsetStringFrom(source.srcset) }}"
+        {% if source.media %} media="{{source.media}}" {% endif %}
+        {% if source.sizes %}
+          sizes="{{getSizeStringFrom(source.sizes)}}"
+        {% endif %}
+        {% if source.aspect_ratio %}
+          data-aspect-ratio={{source.aspect_ratio}}
+        {% endif %} >
+
+        {% if loop.last and default.src is not defined %}
+          {% for src in source.srcset %}
+            {% if loop.last %}
+              {% set default.src = src.src %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+    {% endfor %}
+
+    {% set imageData = {
+      "src": default.src,
+      "alt": data.alt,
+      "progressive": data.progressive,
+      "aspect_ratio": data.aspect_ratio
+    } %}
+    {{ image_el(imageData) }}
+  </picture>
+{% endmacro %}
+
+{% macro image_el(data) %}
+  {% set image = namespace(sizes="",srcset="") %}
+
+  {% set attrPrefix = "" %}
+  {% if data.progressive %}
+    {% set attrPrefix = "data-" %}
+  {% endif %}
+
+  {% if data.src %}
+    {% set image.src = data.src.path %}
+  {% endif %}
+  {% if data.sizes %}
+    {% set image.sizes = getSizeStringFrom(data.sizes) %}
+  {% endif %}
+
+  {% if data.srcset %}
+    {% set image.srcset = getSrcsetStringFrom(data.srcset) %}
+    {% for source in data.srcset %}
+      {% if loop.last %}
+        {% if image.src is not defined %}
+          {% set image.src = source.src.path %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  <img
+    {{attrPrefix}}src="{{image.src}} "
+    {% if data.class and data.progressive is not defined %} class="{{ data.class }}" {% endif %}
+    {% if image.srcset %} {{attrPrefix}}srcset="{{image.srcset}}" {% endif %}
+    {% if image.sizes %} {{attrPrefix}}sizes="{{image.sizes}}" {% endif %}
+    {% if data.alt %} {{attrPrefix}}alt="{{ _(data.alt) }}" {% endif %} />
+{% endmacro %}
+
+{% macro getSizeStringFrom(sizes) %}
+  {% set sizeString = namespace(string="") %}
+  {% for size in sizes %}
+    {% if size.media %}
+      {% set new_string = size.media + " " + size.size %}
+    {% else %}
+      {% set new_string = size.size %}
+    {% endif %}
+
+    {%- if not loop.last -%}
+      {% set new_string = new_string + ", " %}
+    {% endif %}
+
+    {%- set sizeString.string = sizeString.string + new_string -%}
+  {%- endfor -%}
+
+  {{-sizeString.string-}}
+{% endmacro %}
+
+{% macro getSrcsetStringFrom(sources) %}
+  {% set srcset = namespace(string="") %}
+  {% for source in sources %}
+    {% if loop.last %}
+      {% set suffix = "" %}
+    {% else %}
+      {% set suffix = ", " %}
+    {% endif %}
+    {% set srcString = source.src.path + " " + source.descriptor + suffix %}
+    {%- set srcset.string = srcset.string + srcString -%}
+  {% endfor %}
+
+  {{srcset.string}}
+{% endmacro %}
+
+{% macro placeholder(data) %}
+  {% if data.sources %}
+    {% set el = picture_el(data) %}
+  {% else %}
+    {% set el = image_el(data) %}
+  {% endif %}
+
+  <div class='image-placeholder'
+    {% if data.aspect_ratio %}
+      data-has-aspect-ratio
+      data-aspect-ratio="{{data.aspect_ratio}}"
+      style="padding-top:{{data.aspect_ratio * 100}}%;"
+    {% endif %} >
+    {{ el }}
+  </div>
+{% endmacro %}

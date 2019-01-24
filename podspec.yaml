@@ -1,18 +1,57 @@
-grow_version: ">=0.3.6"
+grow_version: ">=0.5.2"
+
+home: /content/pages/home.yaml
 
 localization:
   default_locale: en_US
   locales:
-  - de_DE
   - en_US
 
 static_dirs:
 - static_dir: /source/images/
   serve_at: /static/images/
+- static_dir: /source/videos/
+  serve_at: /static/videos/
 - static_dir: /dist/
   serve_at: /static/
 
 preprocessors:
 - kind: gulp
-  build_task: "build"
-  run_task: "serve"
+  run_task: serve
+  build_task: build-production
+
+meta:
+  google_analytics_id: ""
+  google_site_verification: ""
+  image_path: #/source/images/social_image.png
+  favicon_path: #/source/images/favicon.ico
+  touch:
+    76: #/source/images/apple-touch-icon-76x76.png
+    120: #/source/images/apple-touch-icon-120x120.png
+    152: #/source/images/apple-touch-icon-152x152.png
+    180: #/source/images/apple-touch-icon-180x180.png
+    android120: #/source/images/touch-icon-120x120.png
+    android180: #/source/images/touch-icon-180x180.png
+
+deployments:
+  production:
+    destination: local
+    out_dir: ./build/
+    env:
+      name: prod
+      host: #<domain-name.com>
+      scheme: https
+  google3:
+    destination: local
+    out_dir: #./googledata/html/external_content/<project-directory-name>/
+    keep_control_dir: no
+    control_dir: #./googledata/services/g6/sites/<project-repo-name>
+    env:
+      name: prod
+  webreview:
+    destination: webreview
+    server: googwebreview.appspot.com
+    project: #piperblack/<project-name>
+    subdomain_prefix: #<project-name>
+    env:
+      name: local

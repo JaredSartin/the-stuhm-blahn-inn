@@ -3,19 +3,15 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
 /**
- * Minifies images based on quality/speed recommendations
+ * Export gulp tasks.
  */
 gulp.task('minify-png', () => {
-    return gulp.src('./source/images/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant({
-              quality: '45-75',
-              speed: 8,
-            })],
-        }))
-        // !IMPORTANT manually move from /tmp to
-        // /static to avoid recompressing images
-        .pipe(gulp.dest('./tmp/images/'));
+  return gulp
+    .src('./source/images/**/*.{png,jpg}')
+    .pipe(
+      imagemin([pngquant(), imagemin.jpegtran({ progressive: true })], {
+        verbose: true
+      })
+    )
+    .pipe(gulp.dest('./dist/images/'));
 });

@@ -1,0 +1,52 @@
+
+{% macro link(data, is_button=false) %}
+  <a
+    {% if data.is_external -%}
+      {% if data.render %}
+        href="{{ data.link.path or data.link | render }}"
+      {% else -%}
+        href="{{ data.link or '#' }}"
+      {% endif %}
+    {% else -%}
+      {% if data.render %}
+        href="{{ data.link | render }}"
+      {% else -%}
+        href="{{ data.link.path or data.link or '#' }}"
+      {% endif %}
+    {% endif -%}
+
+    class="{%- if is_button -%} button {%- endif -%}
+      {% if data.class %} {{ data.class }} {%- endif -%}"
+
+    {% if data.attr %} {{ _(data.attr) }}{%- endif -%}
+
+    {% if data.is_external %} target="_blank"{%- endif -%}
+
+    {% if data.ga %}
+      data-g-event="{{ data.ga.category }}"
+      data-g-label="{{ data.ga.label }}"
+      data-g-action="{{ data.ga.action or 'clicked' }}"
+    {%- endif -%}
+
+    {% if data.attrs %} {{ utils.attrs(data.attrs) }}{%- endif -%}
+  >
+    {% if data.icon and data.icon_position == 'pre' -%}
+      {{ _images.icon(data.icon) }}
+    {%- endif %}
+    {% if caller %}
+      {{ caller() }}
+    {% else %}
+     {% if data.icon and data.icon_position == 'fill' -%}
+      {{ _images.image(data.icon) }}
+     {% else %}
+      {{ _(data.text) }}
+     {% endif %}
+    {% endif %}
+    {% if data.text_after %}
+      <span>{{ _(data.text_after) }}</span>
+    {% endif %}
+    {% if data.icon and data.icon_position == 'post' -%}
+      {{ _images.icon(data.icon) }}
+    {%- endif %}
+  </a>
+{% endmacro %}

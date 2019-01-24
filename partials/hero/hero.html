@@ -1,0 +1,31 @@
+{% import "./partials/macros/components.j2" as components with context %}
+
+<div class="hero {{partial.classNames}}
+  {% if partial.bg_video %}hero__has-video{% endif %}">
+
+  {% if partial.bg_video %}
+  <div class="video__fill-bleed__overlay"></div>
+  <video width="100%" height="100%" autoplay loop muted playsinline
+    class="video__full-bleed">
+    <source src="{{ partial.bg_video.source.path }}" type="video/mp4">
+    {{_(globals.messages.video_not_supported)}}
+  </video>
+  {% endif %}
+
+  <div class="hero__col hero__col__copy">
+    {% if partial.logo %}
+    {{ components.images.image(partial.logo) }}
+    {% endif %}
+
+    {% if partial.title is defined %}
+    <div class="hero__copy">
+      <h1 class="h1 hero__copy__title">{{_(partial.title)}}</h1>
+      <h4 class="hero__copy__desc">{{_(partial.desc)}}</h4>
+      {% if partial.cta %}
+      {{ components.links.link(partial.cta, is_button=true) }}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+</div>

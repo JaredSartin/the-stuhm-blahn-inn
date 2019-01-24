@@ -1,0 +1,119 @@
+@import './_utils.scss';
+@import './_config.scss';
+
+.footer__link {
+  color: black;
+  font-family: $font-family-secondary;
+  font-size: $fs-h4;
+}
+
+.footer__lower {
+  background-color: $white;
+  display: flex;
+  height: 118px;
+  padding: 0 64px;
+  position: relative;
+  width: 100%;
+
+  justify-content: space-between;
+  align-items: center;
+  @include respond-down($sm) {
+    flex-direction: column;
+    height: 262px;
+    padding: 94px 39px;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  .footer__logo {
+    height: 28px;
+    margin-left: 80px;
+    margin-right: 35px;
+
+    @include respond-down($md) {
+      margin: 0 0 36px 0;
+      img {
+        width: 100%;
+      }
+    }
+
+    svg {
+      height: 100%;
+    }
+  }
+
+  .footer__language__wrapper {
+    height: 58px;
+    margin: (40px - 10px) 16px 19px 0;
+    min-width: 210px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include respond-down($md) {
+      margin: 12px 6px;
+      position: relative;
+    }
+    @include respond-down($md) {
+      margin: 0 6px;
+    }
+
+    &:after {
+      //background: svg-load('icons/ic_arrow_drop_down_black_24px.svg.min.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: '';
+      height: 24px;
+      opacity: 1;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 12px);
+      transition: opacity $anim-speed;
+      width: 24px;
+
+      pointer-events: none;
+    }
+  }
+
+  .footer__language {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: none;
+    color: $color-text;
+    font-size: $fs-p;
+    height: 100%;
+    position: relative;
+    text-indent: 10px;
+    width: 100%;
+
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .footer__nav {
+    display: flex;
+
+    @include respond-up($md) {
+      align-items: center;
+    }
+
+    .footer-nav__item__href {
+      color: $color-text;
+      cursor: pointer;
+      margin: 0 15px;
+      padding: 15px 0;
+      text-decoration: none;
+
+      @include respond-down($sm) {
+        margin: 9px 0;
+        padding: 0 16px;
+      }
+    }
+  }
+}
