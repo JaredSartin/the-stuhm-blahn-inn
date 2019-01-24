@@ -13,8 +13,8 @@ partials:
 - partial: hero
   dataSelector: Home
   classNames: hero__home hero__col--left
-  bg_video:
-    poster: #!g.url /source/images/hero-graphic.svg
+  # bg_video:
+  #   poster: #!g.url /source/images/hero-graphic.svg
   title@: Welcome! Bienvenue! Tervetuloa! Willkommen! Bienvenido!
   desc@: You're moments away from a crispy new website.
   cta:
