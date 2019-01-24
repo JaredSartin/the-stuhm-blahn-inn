@@ -12,6 +12,8 @@ static_dirs:
   serve_at: /images/
 - static_dir: /source/fonts/
   serve_at: /fonts/
+- static_dir: /source/raw/
+  serve_at: /
 - static_dir: /dist/
   serve_at: /
 
