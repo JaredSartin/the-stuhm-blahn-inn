@@ -34,22 +34,8 @@ meta:
 deployments:
   production:
     destination: local
-    out_dir: ./build/
+    out_dir: ./docs/
     env:
       name: prod
-      host: #<domain-name.com>
+      host: thestuhmblahninn.com
       scheme: https
-  google3:
-    destination: local
-    out_dir: #./googledata/html/external_content/<project-directory-name>/
-    keep_control_dir: no
-    control_dir: #./googledata/services/g6/sites/<project-repo-name>
-    env:
-      name: prod
-  webreview:
-    destination: webreview
-    server: googwebreview.appspot.com
-    project: #piperblack/<project-name>
-    subdomain_prefix: #<project-name>
-    env:
-      name: local
