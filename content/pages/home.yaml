@@ -14,7 +14,6 @@ partials:
   dataSelector: Home
   classNames: hero__home hero__col--left
   bg_video:
-    source: !g.url /source/videos/hero-bg.mp4
     poster: #!g.url /source/images/hero-graphic.svg
   title@: Welcome! Bienvenue! Tervetuloa! Willkommen! Bienvenido!
   desc@: You're moments away from a crispy new website.

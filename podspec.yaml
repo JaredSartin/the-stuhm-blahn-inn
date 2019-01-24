@@ -10,8 +10,6 @@ localization:
 static_dirs:
 - static_dir: /source/images/
   serve_at: /static/images/
-- static_dir: /source/videos/
-  serve_at: /static/videos/
 - static_dir: /dist/
   serve_at: /static/
 
