@@ -9,9 +9,11 @@ localization:
 
 static_dirs:
 - static_dir: /source/images/
-  serve_at: /static/images/
+  serve_at: /images/
+- static_dir: /source/fonts/
+  serve_at: /fonts/
 - static_dir: /dist/
-  serve_at: /static/
+  serve_at: /
 
 preprocessors:
 - kind: gulp
@@ -22,14 +24,14 @@ meta:
   google_analytics_id: "UA-133051663-1"
   google_site_verification: ""
   image_path: #/source/images/social_image.png
-  favicon_path: #/source/images/favicon.ico
+  favicon_path: /source/images/favicon.ico
   touch:
-    76: #/source/images/apple-touch-icon-76x76.png
-    120: #/source/images/apple-touch-icon-120x120.png
-    152: #/source/images/apple-touch-icon-152x152.png
+    76: /source/images/apple-touch-icon-76x76.png
+    120: /source/images/apple-touch-icon-120x120.png
+    152: /source/images/apple-touch-icon-152x152.png
     180: #/source/images/apple-touch-icon-180x180.png
-    android120: #/source/images/touch-icon-120x120.png
-    android180: #/source/images/touch-icon-180x180.png
+    android120: /source/images/apple-touch-icon-120x120.png
+    android180: #/source/images/apple-touch-icon-180x180.png
 
 deployments:
   production:
