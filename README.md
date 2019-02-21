@@ -1,40 +1,72 @@
-## Getting started
-Start off by installing all external components:
-```
-npm install
-```
+# Massively
+> This is Massively, a text-heavy, article-oriented design built around a huge background
+image.
 
-You must be using `node 7.x` or `node 8.x`. Node 9+ is not supported by the image converting pre-processors.
+## How to Use This Theme
+Jekyll consumes themes in two flavors; gem-based or spread across multiple folders
+in the site source. This port is of the second type. Concretely, it means that you
+can simply grab the [zip][zip] or clone this repository, run `bundle install`
+in the new directory and finally `bundle exec jekyll serve`.
+You can now access your brand-new Jekyll site on [http://127.0.0.1:4000/][local].
+Enjoy!
 
-## Running
-To fire up the server and begin development, run the following:
-```
-grow run
-```
+If you're completely new to Jekyll, check out it's [documentation][jekyll] first.
+It's not too hard, we promise!
 
-To build the project/delete source maps:
-```
-gulp build & grow run
-```
+[zip]: https://github.com/iwiedenm/jekyll-theme-massively-src/archive/master.zip
+[local]: http://127.0.0.1:4000/
+[jekyll]: https://jekyllrb.com/
 
-`grow build` includes `gulp optimize` which pre-processes all the images.
-
-# Bonus Gulp tasks
-
-You can alphabetize your CSS props with Stylefmt + stylelint:
+## Features
+### Auto-Generating Sitemap
+The sitemap is auto generated! Just simply change the sitemap variable in front matter of each page. It looks like so...
 ```
-gulp css-fmt
-```
-
-You can strip png images of bulky meta data with:
-```
-gulp minify-png
+sitemap:
+    priority: 0.7
+    lastmod: 2017-11-02
+    changefreq: weekly
 ```
 
-# Deploying
+### Formspree.io Integration
+Formspree is supported out of the box! Just add your email to ```_config.yml``` and test the form.
+You have to confirm your email address the first time you use it on each url. Alternatively,
+move the from to a dedicated page or consider a pro subscription.
 
-You can build the static files for a particular deployment with the
-`grow deploy` task. You must add an environment flag for the environment you're
-building for:
 
-`grow deploy production`
+## Credits
+### Original README from HTML5 UP
+```
+Massively by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+
+This is Massively, a text-heavy, article-oriented design built around a huge background
+image (with a new parallax implementation I'm testing) and scroll effects (powered by
+Scrollex). A *slight* departure from all the one-pagers I've been doing lately, but one
+that fulfills a few user requests and makes use of some new techniques I've been wanting
+to try out. Enjoy it :)
+
+Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
+you can use for pretty much whatever.
+
+(* = not included)
+
+AJ
+aj@lkn.io | @ajlkn
+
+
+Credits:
+
+	Demo Images:
+		Unsplash (unsplash.com)
+
+	Icons:
+		Font Awesome (fortawesome.github.com/Font-Awesome)
+
+	Other:
+		jQuery (jquery.com)
+		Misc. Sass functions (@HugoGiraudel)
+		Skel (skel.io)
+		Scrollex (github.com/ajlkn/jquery.scrollex)
+```

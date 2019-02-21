@@ -1,8 +1,0 @@
-{% import "./partials/macros/components.j2" as components with context %} {% for section in partial.sections %}
-<div class="bit-container">
-  <div class="bit">
-    <h3 class="h3">{{ _(section.title) }}</h3>
-    <p>{{ _(section.body) }}</p>
-  </div>
-</div>
-{% endfor %}

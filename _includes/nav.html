@@ -1,0 +1,13 @@
+<ul class="links">
+  <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Theme Home</a></li>
+  <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
+  <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Blog</a></li>
+  <li class="{% if page.url contains '/elements/' %} active {% endif %}"><a href="{{ "/elements/" | absolute_url }}">Elements Reference</a></li>
+</ul>
+
+<ul class="icons">
+  <li><a href="https://youtube.com/channel/{{site.youtube}}" class="icon fa-youtube" rel="nofollow"><span class="label">YouTube</span></a></li>
+  <li><a href="https://twitch.tv/{{site.twitch}}" class="icon fa-twitch" rel="nofollow"><span class="label">Twitch</span></a></li>
+  <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
+  <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
+</ul>
