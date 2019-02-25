@@ -14,12 +14,11 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "/blog/:title/"
+    permalink: "/archive/:title/"
     layout: post
     author:
 
-# Jekyll
-permalink:          /blog/:title/
+permalink:          /archive/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -37,11 +36,12 @@ sass:
 disqus_shortname:   default
 
 # Social
-analytics-id:       "default"
+analytics-id:       "UA-133051663-1"
 facebook:           The-Stuhm-Blahn-Inn-606927729751212
 instagram:          TheStuhmBlahnInn
 twitch:             TheStuhmBlahnInn
 youtube:            UCBxan9UWJ0tNtKYlBjCcn_Q
+disqus_shortname:   the-stuhm-blahn-inn-d-d-webseries
 
 # personal
 email:              info@default.com
@@ -55,7 +55,7 @@ gems:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "/blog/page:num/"
+paginate_path: "/archive/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
