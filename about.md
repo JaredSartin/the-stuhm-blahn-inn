@@ -19,7 +19,7 @@ We are a few friends who came together late in 2018 to realize the potential of 
 
 - [Lindsey Sartin](https://www.instagram.com/lm.sartin/) as Velhari
 - [Nathan Ondracek](https://www.instagram.com/nondracek/) as Garth Underfoot
-- [Lauren Byrd-Ondracek](https://www.instagram.com/lolobyrdie/) as Aurelia Ravenguard
+- [Lauren Byrd](https://www.instagram.com/lolobyrdie/) as Aurelia Ravenguard
 - [Austin Schumacher](https://www.instagram.com/awesome_schu/) as Rúmil Orophin​
 - [Jared Sartin](https://www.instagram.com/awesome_schu/) as The Dungeon Master
 
