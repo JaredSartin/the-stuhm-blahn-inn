@@ -8,3 +8,4 @@ bower_components
 main.min.js
 .podcache.yaml
 .depcache.json
+.sass_cache/**/*
