@@ -92,6 +92,19 @@
 			}
 		}
 
+    > .comments-wrapper {
+      width: 100%;
+
+			@include padding((_size(padding) * 2), (_size(padding) * 4));
+
+			@include breakpoint(large) {
+				@include padding((_size(padding) * 2), (_size(padding) * 2));
+			}
+			@include breakpoint(small) {
+				@include padding((_size(padding) * 2), (_size(padding) * 1));
+      }
+    }
+
 		> .posts {
 			@include flexgrid((
 				columns:			2,

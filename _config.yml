@@ -7,7 +7,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://thestuhmblahninn.com/" # the base hostname & protocol for your site
 background_image:   /images/bg.jpg
 # Tip: The color palette and other styles can be configured in /_sass/lib/_vars.scss
-formspree_thankyou_page: /thank-you
 
 defaults:
 - scope:
@@ -41,6 +40,7 @@ facebook:           The-Stuhm-Blahn-Inn-606927729751212
 instagram:          TheStuhmBlahnInn
 twitch:             TheStuhmBlahnInn
 youtube:            UCBxan9UWJ0tNtKYlBjCcn_Q
+fb_id:              313827729489288
 disqus_shortname:   the-stuhm-blahn-inn-d-d-webseries
 
 # personal
