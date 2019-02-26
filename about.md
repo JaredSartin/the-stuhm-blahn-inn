@@ -24,7 +24,7 @@ We are a few friends who came together late in 2018 to realize the potential of 
 - [Jared Sartin](https://www.instagram.com/jaredsartin/) as The Dungeon Master
 
 ## Schedule
-Season 1 will be a 6 episode season, airing on the dates below (links to our Twitch, Facebook, and YouTube are at the top of the page). An edited version of the stream will be available the following Friday on YouTube.
+Season 1 will be a 6 episode run, airing on the dates below (links to our Twitch, Facebook, and YouTube are at the top of the page). An edited version of the stream will be available the following Friday on YouTube.
 
 - March 2nd, 4PM PST
 - March 16rd, 4PM PST
