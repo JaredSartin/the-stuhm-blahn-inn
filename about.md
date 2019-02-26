@@ -21,7 +21,7 @@ We are a few friends who came together late in 2018 to realize the potential of 
 - [Nathan Ondracek](https://www.instagram.com/nondracek/) as Garth Underfoot
 - [Lauren Byrd](https://www.instagram.com/lolobyrdie/) as Aurelia Ravenguard
 - [Austin Schumacher](https://www.instagram.com/awesome_schu/) as Rúmil Orophin​
-- [Jared Sartin](https://www.instagram.com/awesome_schu/) as The Dungeon Master
+- [Jared Sartin](https://www.instagram.com/jaredsartin/) as The Dungeon Master
 
 ## Schedule
 Season 1 will be a 6 episode season, airing on the dates below (links to our Twitch, Facebook, and YouTube are at the top of the page). An edited version of the stream will be available the following Friday on YouTube.
