@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About The Stuhm Bl'ahn Inn
-description: The Stuhm Bl'ahn Inn is a group of artists, actors, storytellers, and nerds. Yes we each fit those categories to a degree.
+description: A Los Angeles based D&D group takes their new campaign online. Some new faces to the D&D realm and some veterans; this group is full of actors, story tellers, and artists - all ready for adventure and ready to make you laugh!
 sitemap:
     priority: 0.7
     lastmod: 2017-11-02
