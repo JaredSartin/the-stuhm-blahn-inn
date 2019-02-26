@@ -1,11 +1,6 @@
 .DS_Store
-dist/**/*
-!dist/CNAME
+_site
 build
-node_modules
-bower_components
-**.mo
-main.min.js
 .podcache.yaml
 .depcache.json
 *.scssc
