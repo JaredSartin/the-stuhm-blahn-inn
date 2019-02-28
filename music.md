@@ -11,7 +11,11 @@ sitemap:
 
 Below is a selection of credits and licenses for the music we use on stream. If we have failed to include your license, please contact us on Facebook. If you want your music featured, please reach out on Facebook as well.
 
+---
+
 Various selections from Midnight Syndicate (http://www.midnightsyndicate.com)
+
+---
 
 Music from https://filmmusic.io:
 
@@ -54,6 +58,8 @@ Music from https://filmmusic.io:
 - "For Originz" by Kevin MacLeod (https://incompetech.com)
 
 Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)
+
+---
 
 Music from Plate Mail Games (http://www.drivethrurpg.com/browse/pub/4847/Plate-Mail-Games):
 
