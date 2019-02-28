@@ -57,7 +57,7 @@ Music from https://filmmusic.io:
 - "Relent" by Kevin MacLeod (https://incompetech.com)
 - "For Originz" by Kevin MacLeod (https://incompetech.com)
 
-Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)
+License: CC BY (http://creativecommons.org/licenses/by/4.0/)
 
 ---
 
