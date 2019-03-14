@@ -50,47 +50,22 @@ sitemap:
 							<article class="post featured">
 								<header class="major">
 									<h2>Live, Streaming, D&D</h2>
-									<p>Join us twice a month for an adventure that follows 4 unique characters
+									<p>
+                    Join us twice a month for an adventure that follows 4 unique characters
                     as they try to solve, fight, and dig their way out of situations
                     the DM throws at them. Watch us live on our
                     <a href="https://twitch.tv/TheStuhmBlahnInn" target="_blank"><b>Twitch</b></a>
                     page every 1st and 3rd Saturday of the month at 4pm PST.
-									</p><p>
-                    Missed the live show? It re-airs Friday after it was live on our
-                    <a href="https://facebook.com/The-Stuhm-Blahn-Inn-606927729751212" target="_blank"><b>Facebook</b></a>, and
+                  </p>
+                  <h3>Missed the live show?</h3>
+                  <p>
+                    Edits of the live show re-air the Friday following the stream. Catch up on all past episodes on either our
+                    <a href="https://facebook.com/The-Stuhm-Blahn-Inn-606927729751212" target="_blank"><b>Facebook</b></a> or
                     <a href="https://youtube.com/channel/UCBxan9UWJ0tNtKYlBjCcn_Q" target="_blank"><b>YouTube</b></a> channels.
                     All of our past episodes can be found both platforms!
                   </p>
 								</header>
 							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-                {% for post in site.posts limit:2 %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-  									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">View now</a></li>
-  									</ul>
-  								</article>
-                  {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-
-  								</article>
-                  {% endif %}
-                {% endfor %}
-
-							</section>
-
 						<!-- Footer -->
 					</div>
 
